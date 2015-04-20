@@ -1,5 +1,5 @@
 <?php
 
-// nothing in here
+print 'something here now';
 
 ?>
