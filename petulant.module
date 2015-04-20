@@ -2,4 +2,8 @@
 
 print 'something here now';
 
+function from_branch() {
+  return 'pow';
+}
+
 ?>
