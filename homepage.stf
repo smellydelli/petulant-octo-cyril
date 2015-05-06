@@ -1,0 +1,41 @@
+<div class="homepage-video">
+  <div class="cycle-slideshow">
+    <div class="poster" style="padding-top: 40.7%; background: url(/sites/all/assets/uk/poster.jpg) no-repeat; background-size: contain;"></div>
+  </div>
+  <video id="superhero_video" class="hide" loop muted preload="none">
+      <source src="/sites/all/assets/uk/homepage-video-apr2015.mp4" type="video/mp4">
+  </video>
+  <h1 id="page-title">Helping our customers do amazing things</h1>
+</div>
+
+<script>
+jQuery(document).ready(function(){
+  if (jQuery.browser.device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase())) || jQuery('html').hasClass('lt-ie9')) {
+    jQuery.each(jQuery('.cycle-slideshow img[data-img]'), function(){
+      jQuery(this).attr('src', jQuery(this).data('img')).removeAttr('data-img');
+    }).promise().done(function(){
+      //jQuery( '.cycle-slideshow' ).cycle();
+    });
+  }
+  else {
+    var vid = document.getElementById("superhero_video");
+
+    jQuery('#superhero_video').attr('preload','auto');
+    checkLoad();
+  }
+
+  function checkLoad() { 
+    if (vid.readyState === 4) {
+      jQuery(vid).removeClass('hide');
+      vid.play();
+      setTimeout(function(){
+        jQuery('.homepage-video .cycle-slideshow').addClass('hide');
+      }, 600);
+    }
+    else {
+      setTimeout(checkLoad, 100);
+    }
+  }
+
+});
+</script>
