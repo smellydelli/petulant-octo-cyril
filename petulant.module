@@ -6,7 +6,7 @@
  * An impementation of hook master
  */
 function from_master() {
-  return 'bang bang';
+  return 'bang bang boing';
 }
 
 ?>
