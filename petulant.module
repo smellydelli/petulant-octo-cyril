@@ -1,12 +1,10 @@
 <?php
 
-// nothing in here
-
 /*
  * An impementation of hook master
  */
 function from_master() {
-  return 'bang bang boing';
+  return 'bang';
 }
 
 ?>
